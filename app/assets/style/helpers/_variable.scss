@@ -26,6 +26,10 @@ $font-sizes: (
     lg: $base-font-size * 2.25,   // 36px
 );
 
+// 格線系統
+$base-gutter: 24px;
+$base-spacer: 8px;
+
 // icon size
 $icon-sizes: (
     xxl: 100px,              //100px
@@ -33,10 +37,6 @@ $icon-sizes: (
     sm : $base-spacer * 5,   //40px
     xs : $base-spacer * 3,   //24px
 );
-
-// 格線系統
-$base-gutter: 24px;
-$base-spacer: 8px;
 
 $properties: (
     padding: p,
