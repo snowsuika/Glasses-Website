@@ -1,0 +1,51 @@
+// icon size
+@each $key, $icon-size in $icon-sizes {
+    .icon-#{$key} {
+        width : $icon-size;
+        height: $icon-size;
+    }
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .icon-#{$size}-#{$key} {
+                width : $icon-size;
+                height: $icon-size;
+            }
+        }
+    }
+}
+
+// width-breakPoint-size (%)
+@each $width-percent in (25, 50, 75, 100) {
+    .w-#{$width-percent} {
+        width: percentage($width-percent / 100);
+    }
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .w-#{$size}-#{$width-percent} {
+                width: percentage($width-percent / 100);
+            }
+        }
+    }
+}
+
+.bg-primary {
+    background-color: $color-primary;
+}
+
+.bg-dark-primary {
+    background-color: $color-dark-primary;
+}
+
+.bg-secondary {
+    background-color: $color-light-primary;
+}
+
+.bg-white {
+    background-color: $color-white;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+

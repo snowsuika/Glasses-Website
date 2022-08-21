@@ -1,0 +1,92 @@
+@each $display, $value in $display-properties {
+    .d-#{$display} {
+        display: $value !important;
+    }
+}
+
+@each $display, $value in $display-properties {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .d-#{$size}-#{$display} {
+                display: $value !important;
+            }
+        }
+    }
+}
+
+@each $flex-wrap, $value in $flex-wrap-properties {
+    .flex-#{$flex-wrap} {
+        flex-wrap: $value !important;
+    }
+}
+
+@each $flex-wrap, $value in $flex-wrap-properties {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .flex-#{$size}-#{$flex-wrap} {
+                flex-wrap: $value !important;
+            }
+        }
+    }
+}
+
+@each $flex-direction, $value in $direction-properties {
+    .flex-#{$flex-direction} {
+        flex-direction: $value !important;
+    }
+}
+
+@each $flex-direction, $value in $direction-properties {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .flex-#{$size}-#{$flex-direction} {
+                flex-direction: $value !important;
+            }
+        }
+    }
+}
+
+@each $justify-content, $value in$justify-content-properties {
+    .justify-content-#{$justify-content} {
+        justify-content: $value !important;
+    }
+}
+
+@each $justify-content, $value in$justify-content-properties {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .justify-content-#{$size}-#{$justify-content} {
+                justify-content: $value !important;
+            }
+        }
+    }
+}
+
+@each $property in map-keys($align-items-properties) {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .align-items-#{$size}-#{$property} {
+                align-items: map-get($align-items-properties, $property);
+            }
+        }
+    }
+    .align-items-#{$property} {
+        align-items: map-get($align-items-properties, $property);
+    }
+}
+
+@each $align-item, $value in $align-items-properties {
+    .align-items-#{$align-item} {
+        align-items: $value;
+    }
+}
+
+@each $align-item, $value in$align-items-properties {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .align-items-#{$size}-#{$align-item} {
+                align-items: $value;
+            }
+        }
+    }
+}

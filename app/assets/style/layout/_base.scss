@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    // outline: 1px red solid;
+}
+
+body {
+    font-family: 'Noto Sans TC', 'Roboto', sans-serif, Helvetica, Tahoma, Arial;
+    font-size: $base-font-size;
+    line-height: 1.5;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+a:link {
+    text-decoration: none;
+    &:hover {
+        filter: brightness(0.8);
+    }
+}

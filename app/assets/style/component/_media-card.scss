@@ -1,0 +1,43 @@
+.media {
+    margin-bottom: 60px;
+    @include media-breakpoint-up(md) {
+        margin-bottom: $base-spacer * 3;
+    }
+    @include media-breakpoint-up(md) {
+        img {
+            max-width: 336px;
+        }
+        p {
+            font-size: map-get($font-sizes, base);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            @include media-breakpoint-up(sm) {
+                display: none;
+            }
+        }
+    }
+    .media-title {
+        color: $color-dark-primary;
+        font-weight: $font-weight-regular;
+        text-align: left;
+        font-size: 32px;
+        @include media-breakpoint-up(md) {
+            font-size: map-get($font-sizes, md);
+        }
+    }
+    .media-sub-title {
+        color: $color-black;
+        font-size: map-get($font-sizes, sm);
+        @include media-breakpoint-up(md) {
+            font-size: map-get($font-sizes, base);
+        }
+    }
+    .media-body {
+        color: $color-dark-gray;
+        font-size: map-get($font-sizes, sm);
+    }
+}

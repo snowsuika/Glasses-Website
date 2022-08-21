@@ -1,0 +1,45 @@
+.container {
+    margin   : 0 auto;
+    max-width: map-get($container-max-widths, lg);
+    padding  : 0 12px;
+    @include media-breakpoint-up(md) {
+        max-width: map-get($container-max-widths, md);
+    }
+    @include media-breakpoint-up(sm) {
+        max-width: map-get($container-max-widths, sm);
+    }
+}
+
+.row {
+    margin: 0 -12px;
+    > [class^='col-'] {
+        padding: 0 12px;
+    }
+}
+
+@each $container-width in $container-max-widths {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .container-#{$size}-#{$container-width} {
+                max-width: map-get($container-max-widths, $size);
+            }
+        }
+    }
+}
+
+@function calc-width($i) {
+    @return percentage($i/12);
+}
+
+@for $i from 1 through 12 {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .col-#{$size}-#{$i} {
+                width: calc-width($i);
+            }
+        }
+    }
+    .col-#{$i} {
+        width: calc-width($i);
+    }
+}

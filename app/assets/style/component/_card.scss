@@ -1,0 +1,11 @@
+.card {
+    border: 1px #dee2e6 solid;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    .card-title {
+        margin-bottom: $base-spacer;
+    }
+    .card-body {
+        padding: $base-spacer * 2;
+    }
+}

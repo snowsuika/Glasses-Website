@@ -1,0 +1,56 @@
+.font-weight-regular {
+    font-weight: $font-weight-regular;
+}
+
+.font-weight-bold {
+    font-weight: $font-weight-bold;
+}
+
+.font-weight-black {
+    font-weight: $font-weight-black;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-white {
+    color: $color-white;
+}
+
+.text-primary {
+    color: $color-primary;
+}
+
+.text-dark-primary {
+    color: $color-dark-primary;
+}
+
+.text-gray {
+    color: $color-gray;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+// text-breakPoint-size
+@each $font-size, $value in $font-sizes {
+    @each $size in $media-sizes {
+        @include media-breakpoint-up($size) {
+            .text-#{$size}-#{$font-size} {
+                font-size: $value !important;
+            }
+        }
+    }
+    .text-#{$font-size} {
+        font-size: $value;
+    }
+}
